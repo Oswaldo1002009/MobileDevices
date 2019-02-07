@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App1</string>
+    <string name="NextButton">Next</string>
+    <string name="textView1">1st Activity</string>
+
+    <string name="PrevButton">Previous</string>
+    <string name="textView2">2nd Activity</string>
+</resources>
