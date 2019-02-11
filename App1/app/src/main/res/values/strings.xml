@@ -6,4 +6,6 @@
 
     <string name="PrevButton">Previous</string>
     <string name="textView2">2nd Activity</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
 </resources>
