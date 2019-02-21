@@ -1,20 +1,15 @@
 package com.example.app4;
 
-import android.support.v4.view.GestureDetectorCompat;
-import android.os.Bundle;
-import android.widget.TextView;
-
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.view.GestureDetectorCompat;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
-import android.widget.Toast;
-import android.content.*;
 
-import java.util.Calendar;
-
-public class SwipeLeft extends Activity implements
+public class SwipeLast extends Activity implements
         GestureDetector.OnGestureListener,
-        GestureDetector.OnDoubleTapListener{
+        GestureDetector.OnDoubleTapListener {
 
     private static final int SWIPE_THRESHOLD = 100;
     private static final int SWIPE_VELOCITY_THRESHOLD = 100;
@@ -22,45 +17,12 @@ public class SwipeLeft extends Activity implements
     private GestureDetectorCompat mDetector;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipe_left);
+        setContentView(R.layout.activity_swipe_last);
 
         mDetector = new GestureDetectorCompat(this, this);
         mDetector.setOnDoubleTapListener(this);
-
-        TextView textViewDay = findViewById(R.id.dayOfTheWeek);
-        textViewDay.setText(dayOfTheWeek());
-    }
-
-    private String dayOfTheWeek(){
-        Calendar calendar = Calendar.getInstance();
-        int day = calendar.get(Calendar.DAY_OF_WEEK);
-        String d = "";
-        switch (day) {
-            case Calendar.SUNDAY:
-                d = "Sunday";
-                break;
-            case Calendar.MONDAY:
-                d = "Monday";
-                break;
-            case Calendar.TUESDAY:
-                d = "Tuesday";
-                break;
-            case Calendar.WEDNESDAY:
-                d = "Wednesday";
-                break;
-            case Calendar.THURSDAY:
-                d = "Thursday";
-                break;
-            case Calendar.FRIDAY:
-                d = "Friday";
-                break;
-            case Calendar.SATURDAY:
-                d = "Saturday";
-                break;
-        }
-        return d;
     }
 
     @Override
@@ -132,13 +94,13 @@ public class SwipeLeft extends Activity implements
     }
 
     public void onSwipeRight() {
-        Intent myIntent = new Intent(SwipeLeft.this, MainActivity.class);
-        SwipeLeft.this.startActivity(myIntent);
+        Intent myIntent = new Intent(SwipeLast.this, SwipeLeft.class);
+        SwipeLast.this.startActivity(myIntent);
     }
 
     public void onSwipeLeft() {
-        Intent myIntent = new Intent(SwipeLeft.this, SwipeLast.class);
-        SwipeLeft.this.startActivity(myIntent);
+        Intent myIntent = new Intent(SwipeLast.this, SwipeRight.class);
+        SwipeLast.this.startActivity(myIntent);
     }
 
     //Redundant Events

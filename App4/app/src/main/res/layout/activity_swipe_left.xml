@@ -11,7 +11,7 @@
         android:id="@+id/TitleLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/LeftTitle"
+        android:text="Avtivity2"
         android:textColor="@android:color/background_light"
         android:textSize="45sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="@string/textview"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,16 +37,20 @@
         tools:text="@tools:sample/date/day_of_week" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/LeftText"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="183dp"
+        android:layout_marginBottom="48dp"
+        android:text="Day:"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/dayOfTheWeek"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleLeft" />
+        app:layout_constraintTop_toBottomOf="@+id/TitleLeft"
+        tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>

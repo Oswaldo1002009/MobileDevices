@@ -2,4 +2,6 @@
     <string name="app_name">App4</string>
     <string name="LeftTitle">Left Activity</string>
     <string name="LeftText">You swiped to the left on:</string>
+    <string name="LastTitle">Activity 4</string>
+    <string name="textview">TextView</string>
 </resources>
