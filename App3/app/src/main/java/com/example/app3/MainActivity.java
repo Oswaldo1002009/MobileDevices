@@ -1,6 +1,8 @@
 package com.example.app3;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -8,8 +10,6 @@ import android.os.Bundle;
 import android.content.Context;
 import android.widget.EditText;
 import android.widget.Toast;
-//import android.content.DialogInterface;
-//import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
@@ -87,6 +87,22 @@ public class MainActivity extends AppCompatActivity {
 
         AlertDialog MyThirdDialog = DialogConf3.create();
         MyThirdDialog.show();
+
+        //Bar notification
+        int NOTIF_ID = 1234;
+        Notification.Builder NotiBuilder = new Notification.Builder(this);
+        NotiBuilder.setSmallIcon(R.mipmap.ic_launcher);
+        NotiBuilder.setContentTitle("Important Notification");
+        NotiBuilder.setContentText("Details of the notification");
+
+        /*Intent notificationIntent = new Intent(context, ChildActivity.class);
+        notificationIntent.putExtra("myData", "This string comes from the previous activity");
+        PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, 0);
+
+        NotiBuilder.setContentIntent(contentIntent);*/
+
+        NotificationManager MyNotification = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        MyNotification.notify(NOTIF_ID, NotiBuilder.build());
     }
 
 
